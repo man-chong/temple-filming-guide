@@ -1,0 +1,540 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>廟宇拍攝申請人須知</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+
+<style>
+  /* Tokens. Institutional register: cool official paper, indigo for authority,
+     and three semantic colours kept separate from it so status reads at a glance. */
+  :root {
+    --ink:#1B1E26; --ink-2:#474C58; --ink-3:#767C88;
+    --paper:#F7F7F4; --paper-2:#EFEFEA; --paper-3:#E5E5DE;
+    --rule:#D7D7CF; --rule-soft:#E6E6DF;
+    --indigo:#2E3D5C; --indigo-w:#E7EAF1;
+    --stop:#8C3A2E; --stop-w:#F6E7E4;
+    --go:#2F5D4C;   --go-w:#E4EDE9;
+    --ask:#8A6522;  --ask-w:#F5EDDC;
+    --f:'Public Sans','Noto Sans TC',system-ui,sans-serif;
+    --f-cjk:'Noto Sans TC','Public Sans',system-ui,sans-serif;
+    --f-d:'IBM Plex Mono',ui-monospace,monospace;
+  }
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+    --ink:#E9E9E4; --ink-2:#B2B5BD; --ink-3:#838792;
+    --paper:#15171C; --paper-2:#1C1F26; --paper-3:#242833;
+    --rule:#343945; --rule-soft:#2A2E38;
+    --indigo:#93A6CB; --indigo-w:#1D2432;
+    --stop:#E08D7E; --stop-w:#2C1A17;
+    --go:#7FBBA4;   --go-w:#152420;
+    --ask:#D3AC63;  --ask-w:#282013;
+  }}
+  :root[data-theme="dark"]{
+    --ink:#E9E9E4; --ink-2:#B2B5BD; --ink-3:#838792;
+    --paper:#15171C; --paper-2:#1C1F26; --paper-3:#242833;
+    --rule:#343945; --rule-soft:#2A2E38;
+    --indigo:#93A6CB; --indigo-w:#1D2432;
+    --stop:#E08D7E; --stop-w:#2C1A17;
+    --go:#7FBBA4;   --go-w:#152420;
+    --ask:#D3AC63;  --ask-w:#282013;
+  }
+
+  *,*::before,*::after{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--f);
+       font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:880px;margin:0 auto;padding:0 22px 88px}
+  :focus-visible{outline:2px solid var(--indigo);outline-offset:2px}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+  /* Masthead */
+  header{padding:46px 0 0}
+  .eyebrow{font-family:var(--f-d);font-size:10.5px;letter-spacing:.15em;text-transform:uppercase;
+           color:var(--indigo);display:flex;align-items:center;gap:10px}
+  .eyebrow::after{content:"";flex:1;height:1px;background:var(--rule)}
+  h1{font-family:var(--f-cjk);font-weight:700;font-size:clamp(30px,5.5vw,42px);
+     letter-spacing:.02em;line-height:1.15;margin:14px 0 0}
+  .sub{font-family:var(--f-d);font-size:12.5px;color:var(--ink-3);margin-top:6px;letter-spacing:.02em}
+  .deck{margin:16px 0 0;max-width:60ch;color:var(--ink-2);font-size:15.5px}
+
+  .disclaim{margin:22px 0 0;padding:14px 16px;border-left:3px solid var(--stop);
+            background:var(--stop-w);font-size:13.5px;color:var(--ink-2);max-width:72ch;border-radius:0 3px 3px 0}
+  .disclaim b{color:var(--ink)}
+
+  section{margin:44px 0 0}
+  .sh{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin:0 0 6px;
+      padding-bottom:8px;border-bottom:1.5px solid var(--ink)}
+  .sh h2{font-family:var(--f-cjk);font-weight:700;font-size:21px;margin:0;letter-spacing:.02em}
+  .sh .n{font-family:var(--f-d);font-size:11px;color:var(--indigo);letter-spacing:.1em}
+  .sh .en{font-family:var(--f-d);font-size:10px;letter-spacing:.12em;text-transform:uppercase;
+          color:var(--ink-3);margin-left:auto}
+  .note{font-size:13.5px;color:var(--ink-3);max-width:66ch;margin:12px 0 0}
+
+  /* Question set */
+  .qs{display:grid;gap:0;margin:20px 0 0;border:1px solid var(--rule);border-radius:3px;overflow:hidden}
+  .q{display:grid;grid-template-columns:150px 1fr;gap:18px;padding:15px 18px;
+     background:var(--paper);border-bottom:1px solid var(--rule-soft);align-items:start}
+  .q:last-child{border-bottom:0}
+  .q>.lab{font-family:var(--f-cjk);font-weight:500;font-size:14px;padding-top:5px}
+  .q>.lab small{display:block;font-family:var(--f-d);font-size:9.5px;letter-spacing:.08em;
+                text-transform:uppercase;color:var(--ink-3);font-weight:400;margin-top:2px}
+  select,input[type=date],input[type=number]{
+    font-family:var(--f-cjk);font-size:14px;padding:8px 10px;border:1px solid var(--rule);
+    background:var(--paper-2);color:var(--ink);border-radius:2px;width:100%;max-width:420px}
+  .hint{font-size:12px;color:var(--ink-3);margin-top:6px}
+  .hidden{display:none}
+
+  /* Status band */
+  .status{margin:22px 0 0;border-radius:3px;overflow:hidden;border:1px solid var(--rule)}
+  .status .band{padding:18px 20px;display:grid;gap:6px}
+  .status .tag{font-family:var(--f-d);font-size:10px;letter-spacing:.14em;text-transform:uppercase}
+  .status .msg{font-family:var(--f-cjk);font-weight:700;font-size:17.5px;line-height:1.5}
+  .status .msg-en{font-size:13px;line-height:1.55}
+  .status.stop .band{background:var(--stop-w);border-left:4px solid var(--stop)}
+  .status.stop .tag{color:var(--stop)}
+  .status.go   .band{background:var(--go-w);border-left:4px solid var(--go)}
+  .status.go   .tag{color:var(--go)}
+  .status.ask  .band{background:var(--ask-w);border-left:4px solid var(--ask)}
+  .status.ask  .tag{color:var(--ask)}
+  .status .foot{padding:12px 20px;background:var(--paper-2);border-top:1px solid var(--rule);
+                font-family:var(--f-cjk);font-weight:500;font-size:13.5px}
+
+  /* Rule cards */
+  .rules{display:grid;gap:14px;margin:20px 0 0}
+  .r{border:1px solid var(--rule);border-radius:3px;background:var(--paper);overflow:hidden}
+  .r-h{display:flex;align-items:baseline;gap:10px;padding:11px 16px;background:var(--paper-2);
+       border-bottom:1px solid var(--rule)}
+  .r-h .t{font-family:var(--f-cjk);font-weight:700;font-size:14.5px}
+  .r-h .src{font-family:var(--f-d);font-size:10px;color:var(--ink-3);margin-left:auto;
+            letter-spacing:.05em;white-space:nowrap}
+  .r-b{padding:14px 16px;display:grid;gap:9px}
+  .r-b .zh{font-family:var(--f-cjk);font-size:14px;line-height:1.75}
+  .r-b .en{font-size:12.5px;color:var(--ink-3);line-height:1.6}
+
+  /* Figures */
+  .fig{display:flex;flex-wrap:wrap;gap:0;margin:14px 0 2px;border-top:1px solid var(--rule)}
+  .fg{padding:12px 24px 12px 0;margin-right:24px;border-right:1px solid var(--rule-soft)}
+  .fg:last-child{border-right:0;margin-right:0}
+  .fg b{display:block;font-family:var(--f-d);font-size:19px;font-weight:500;
+        font-variant-numeric:tabular-nums;line-height:1.15}
+  .fg span{font-size:11px;color:var(--ink-3);letter-spacing:.04em}
+  .fg.zero b{color:var(--go)}
+
+  ul.chk{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:7px}
+  ul.chk li{display:grid;grid-template-columns:16px 1fr;gap:9px;font-size:13.5px;align-items:start}
+  ul.chk li::before{content:"☐";color:var(--ink-3);font-family:var(--f-d);line-height:1.5}
+
+  table{width:100%;border-collapse:collapse;font-size:13px;margin:14px 0 0}
+  th{text-align:left;font-family:var(--f-d);font-weight:500;font-size:9.5px;letter-spacing:.1em;
+     text-transform:uppercase;color:var(--ink-3);padding:9px 10px;border-bottom:1px solid var(--ink)}
+  td{padding:9px 10px;border-bottom:1px solid var(--rule-soft);vertical-align:top}
+  td.d{font-family:var(--f-d);font-size:11.5px;color:var(--ink-3);white-space:nowrap}
+  .pill{display:inline-block;font-family:var(--f-d);font-size:9.5px;letter-spacing:.08em;
+        padding:2px 7px;border-radius:2px;text-transform:uppercase;white-space:nowrap}
+  .pill.A{background:var(--stop-w);color:var(--stop);border:1px solid var(--stop)}
+  .pill.B{background:var(--stop-w);color:var(--stop);border:1px solid var(--stop)}
+  .pill.C{background:var(--go-w);color:var(--go);border:1px solid var(--go)}
+  .pill.U{background:var(--ask-w);color:var(--ask);border:1px dashed var(--ask)}
+
+  .srcbox{border:1px solid var(--rule);border-left:3px solid var(--indigo);border-radius:0 3px 3px 0;
+          padding:16px 18px;background:var(--paper-2);margin:20px 0 0}
+  .srcbox dl{display:grid;gap:11px;margin:0}
+  .srcbox dt{font-family:var(--f-d);font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:var(--indigo)}
+  .srcbox dd{margin:3px 0 0;font-size:13px;color:var(--ink-2)}
+  a{color:var(--indigo);text-decoration:none;border-bottom:1px solid transparent;overflow-wrap:anywhere}
+  a:hover{border-bottom-color:var(--indigo)}
+
+  footer{margin:48px 0 0;padding-top:18px;border-top:1px solid var(--rule);
+         font-family:var(--f-d);font-size:11px;color:var(--ink-3);line-height:1.8}
+
+  @media (max-width:640px){
+    .q{grid-template-columns:1fr;gap:7px}
+    .fg{padding-right:16px;margin-right:16px}
+  }
+
+  /* ── Print only. Screen rendering is untouched. ───────────────────────────
+     A printed copy exists purely as a fallback if the link is unreachable:
+     it must show the header and disclaimer, the current answers, the result,
+     and the temple classification — and drop interactive chrome that means
+     nothing on paper. */
+  @media print {
+    @page { size: A4; margin: 12mm 14mm; }
+    :root { --paper:#fff; --paper-2:#F6F6F3; --ink:#111; }
+    body { background:#fff; font-size: 8.4pt; }
+    .wrap { max-width:none; padding:0; }
+    section { margin: 5mm 0 0; break-inside: auto; }
+    h1 { font-size: 26pt; }
+    .masthead { padding-top: 0; }
+    .board .up:not(.lead) { display:none; }          /* keep only the lead row */
+    .controls, .chip, .ghost, button { display:none !important; }
+    select, input { border:0; padding:0; font-weight:700; background:none; }
+    .routes { break-inside: avoid; }
+    table { font-size: 7.4pt; }
+    th { position: static; }
+    .scroll { overflow: visible; border:0; }
+    tr, .rule, .duty, .route { break-inside: avoid; }
+    a[href^="http"]::after { content:" (" attr(href) ")"; font-size:6.5pt; color:#555; }
+    /* The printed copy is proof the tool exists and what it outputs — not a
+       reproduction of the whole page. The appendices live on the live page. */
+    .appendix { display: none !important; }
+    .print-only { display: block !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">非官方導覽 · Unofficial guide</div>
+  <h1>廟宇拍攝申請人須知</h1>
+  <div class="sub">Temple Filming — what the published rules say before you apply</div>
+  <p class="deck">
+    在華人廟宇委員會轄下廟宇拍攝，須先向委員會申請。此頁把委員會已公布的守則整理成幾條事實問題，讓申請人在遞交前先看清楚哪些條件適用。
+  </p>
+  <p class="disclaim">
+    <b>此頁與華人廟宇委員會並無隸屬關係</b>，並非委員會的出版物，亦未經委員會審核或授權。此頁<b>不接受申請、不作任何批核</b>，亦<b>不收集任何個人資料</b>。凡與委員會公布的資料有異，一概以委員會公布者為準。<br>
+    <b>Not affiliated with the Chinese Temples Committee.</b> This page accepts no applications, makes no determination, and collects no personal information. Where anything here differs from the Committee's own published material, the Committee's material governs.
+  </p>
+</header>
+
+<section>
+  <div class="sh"><span class="n">第一步</span><h2>五條事實問題</h2><span class="en">Five factual questions</span></div>
+  <p class="note">
+    下方已預先填上一個示例（沙田車公廟 · 記錄片），可隨意更改。所有計算在你的瀏覽器內完成，不會傳送到任何地方。
+    <br>Pre-filled with an example. Everything runs in your browser; nothing is sent anywhere.
+  </p>
+
+  <div class="qs">
+    <div class="q">
+      <div class="lab">廟宇<small>Temple</small></div>
+      <div><select id="temple"></select><div class="hint" id="temple-hint"></div></div>
+    </div>
+    <div class="q">
+      <div class="lab">拍攝用途<small>Purpose</small></div>
+      <div><select id="purpose"></select>
+        <div class="hint">分類取自委員會申請表第 10 項。Categories are those on CTC's own application form, item 10.</div></div>
+    </div>
+    <div class="q hidden" id="q-promoting">
+      <div class="lab">推廣甚麼<small>Promoting what</small></div>
+      <div><select id="promoting"></select>
+        <div class="hint">已公布的限制取決於推廣的對象，而非「推廣」這個標籤本身。The published restriction turns on the subject of the promotion.</div></div>
+    </div>
+    <div class="q">
+      <div class="lab">拍攝時數<small>Hours on site</small></div>
+      <div><input type="number" id="hours" min="1" max="16" step="0.5" value="4">
+        <div class="hint">不足一小時亦作一小時計算。Part hours count as whole hours.</div></div>
+    </div>
+    <div class="q">
+      <div class="lab">申請人類別<small>Applicant</small></div>
+      <div><select id="applicant"></select></div>
+    </div>
+    <div class="q">
+      <div class="lab">擬拍攝日期<small>Intended date</small></div>
+      <div><input type="date" id="date"><div class="hint" id="date-hint"></div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="sh"><span class="n">第二步</span><h2>已公布的守則怎麼說</h2><span class="en">What the published rules say</span></div>
+  <div id="status" class="status"></div>
+  <div id="result" class="rules"></div>
+</section>
+
+<section class="appendix">
+  <div class="sh"><span class="n">附</span><h2>每宗申請都適用</h2><span class="en">Applies to every application</span></div>
+  <div id="always" class="rules"></div>
+</section>
+
+<section class="appendix">
+  <div class="sh"><span class="n">附</span><h2>拍攝照片是另一條途徑</h2><span class="en">Photography is a separate, lighter track</span></div>
+  <p class="note">上方全部關於<b>影片</b>拍攝。拍攝照片另有一套守則，條件不同——沒有費用、沒有保險要求、不需劇本，但另有其他限制。切勿混為一談。</p>
+  <div class="r" style="margin-top:16px">
+    <div class="r-h"><span class="t">拍攝照片守則</span><span class="src" id="photo-src"></span></div>
+    <div class="r-b" id="photo-body"></div>
+  </div>
+</section>
+
+<section class="appendix">
+  <div class="sh"><span class="n">附</span><h2>二十四間直轄廟宇的分類</h2><span class="en">How the 24 temples are classified</span></div>
+  <p class="note" id="cat-note"></p>
+  <div style="overflow-x:auto"><table>
+    <thead><tr><th>廟宇</th><th>Temple</th><th>分類 Category</th></tr></thead>
+    <tbody id="temple-table"></tbody>
+  </table></div>
+</section>
+
+<section>
+  <div class="sh"><span class="n">來源</span><h2>資料來源與聯絡</h2><span class="en">Sources and contact</span></div>
+  <div class="srcbox"><dl id="sources"></dl></div>
+</section>
+
+<footer id="foot"></footer>
+</div>
+
+<script id="data" type="application/json">{"generated":"2026-09-06","temples":[{"zh":"大坑蓮花宮","en":"Lin Fa Kung, Tai Hang","cat":"A","region":"HK"},{"zh":"鴨脷洲洪聖古廟","en":"Hung Shing Temple, Ap Lei Chau","cat":"A","region":"HK"},{"zh":"九龍城侯王古廟","en":"Hau Wong Temple, Kowloon City","cat":"A","region":"KLN"},{"zh":"大澳楊侯古廟","en":"Yeung Hau Temple, Tai O","cat":"A","region":"NT"},{"zh":"灣仔玉虛宮（北帝廟）","en":"Yuk Hui Temple (Pak Tai Temple), Wan Chai","cat":"A","region":"HK"},{"zh":"西貢佛堂門天后古廟","en":"Tin Hau Temple, Joss House Bay, Sai Kung","cat":"A","region":"NT"},{"zh":"紅磡觀音廟","en":"Kwun Yum Temple, Hung Hom","cat":"B","region":"KLN"},{"zh":"長洲玉虛宮（北帝廟）","en":"Yuk Hui Temple (Pak Tai Temple), Cheung Chau","cat":"B","region":"NT"},{"zh":"筲箕灣城隍廟","en":"Shing Wong Temple, Shau Kei Wan","cat":"C","region":"HK"},{"zh":"筲箕灣天后古廟","en":"Tin Hau Temple, Shau Kei Wan","cat":"C","region":"HK"},{"zh":"筲箕灣譚公廟","en":"Tam Kung Temple, Shau Kei Wan","cat":"C","region":"HK"},{"zh":"黃泥涌北帝譚公廟及天后廟","en":"Pak Tai, Tam Kung & Tin Hau Temples, Wong Nai Chung","cat":"C","region":"HK"},{"zh":"香港仔天后古廟","en":"Tin Hau Temple, Aberdeen","cat":"C","region":"HK"},{"zh":"鴨脷洲水月宮","en":"Shui Yuet Kung, Ap Lei Chau","cat":"C","region":"HK"},{"zh":"茶果嶺天后廟","en":"Tin Hau Temple, Cha Kwo Ling","cat":"C","region":"KLN"},{"zh":"土瓜灣天后古廟","en":"Tin Hau Temple, To Kwa Wan","cat":"C","region":"KLN"},{"zh":"紅磡北帝古廟","en":"Pak Tai Temple, Hung Hom","cat":"C","region":"KLN"},{"zh":"深水埗三太子及北帝廟","en":"Sam Tai Tsz & Pak Tai Temple, Sham Shui Po","cat":"C","region":"KLN"},{"zh":"深水埗天后廟","en":"Tin Hau Temple, Sham Shui Po","cat":"C","region":"KLN"},{"zh":"深水埗關帝廟","en":"Kwan Tai Temple, Sham Shui Po","cat":"C","region":"KLN"},{"zh":"沙田車公廟","en":"Che Kung Temple, Sha Tin","cat":"C","region":"NT"},{"zh":"坪洲天后廟","en":"Tin Hau Temple, Peng Chau","cat":"C","region":"NT"},{"zh":"長洲洪聖廟","en":"Hung Shing Temple, Cheung Chau","cat":"C","region":"NT"},{"zh":"筲箕灣玉皇寶殿","en":"Yuk Wong Po Din, Shau Kei Wan","cat":"U","region":"HK"}],"purposes":[{"id":"commercial","zh":"商業","en":"Commercial"},{"id":"advertising","zh":"廣告","en":"Advertising"},{"id":"promotional","zh":"推廣","en":"Promotional"},{"id":"archival","zh":"檔案紀錄","en":"Archival"},{"id":"documentary","zh":"記錄片","en":"Documentary"},{"id":"educational","zh":"教育","en":"Educational"}],"promoting":[{"id":"temples","zh":"廟宇","en":"Chinese temples"},{"id":"culture","zh":"傳統文化","en":"Traditional culture"},{"id":"tourism","zh":"旅遊","en":"Tourism"},{"id":"hongkong","zh":"宣傳香港","en":"Hong Kong"},{"id":"other","zh":"商品、品牌或其他","en":"A product, brand or other subject"}],"applicants":[{"id":"public","zh":"公營機構","en":"Public body"},{"id":"charity","zh":"《稅務條例》第 88 條獲豁免的慈善機構或慈善信託","en":"Charity or charitable trust exempt under s.88 IRO"},{"id":"other","zh":"其他（公司、製作公司、個人等）","en":"Other (company, production house, individual)"}],"fees":{"adminPerHour":1000,"adminMinimum":5000,"servicePerHour":100,"serviceMinimum":500,"waivedFor":["public","charity"],"quote":"除公營機構和根據《稅務條例》第 88 條獲豁免繳稅的慈善機構及慈善信託外，拍攝外景的人士須向委員會繳交行政費用及向有關廟宇的司祝繳付服務費（包括電費在內）。","source":"CTC-V 甲(3)"},"rules":{"restricted":{"zh":"所有經古物諮詢委員會列為法定古蹟及一級歷史建築物的廟宇，只會外借以進行拍攝紀錄片及有關推廣廟宇、傳統文化、旅遊或宣傳香港的影片之用，其他商業性質的拍攝申請均不會獲批准，以減低對這些具有歷史價值的建築物造成任何損壞。","en":"Temples listed by the Antiquities Advisory Board as declared monuments or Grade I historic buildings are lent only for documentaries and for films promoting Chinese temples, traditional culture, tourism or Hong Kong. Other filming applications of a commercial nature will not be approved.","source":"CTC-V 甲(1)"},"script":{"zh":"凡有意在委員會轄下廟宇拍攝外景的人士，必須把申請書及有關的劇本遞交委員會考慮及審批。劇情和劇本不得帶有或表現出對宗教信仰不敬的意味，亦不得有不道德、誹謗或政治色彩的內容。除非事先已獲委員會同意，否則所用的劇本不得與經由委員會審核及接納的原來劇本有任何出入。","en":"An application must be submitted with the relevant script. The story and script must not show disrespect to religious belief, nor be immoral, defamatory or political. No deviation from the vetted script without CTC’s prior consent.","source":"CTC-V 甲(2), 甲(6)"},"insurance":{"zh":"申請人須為拍攝的活動以申請人、委員會及民政及青年事務局局長法團的共同名義購買不少於港幣 1,000 萬元之公眾責任保險，並須向委員會提交有關保單之副本以作記錄。","en":"Public liability insurance of not less than HK$10,000,000 in the joint names of the applicant, the Committee and the Secretary for Home and Youth Affairs Incorporated. A copy of the policy must be lodged with the Committee.","source":"CTC-V 甲(5) · FPF"},"hours":{"zh":"拍攝的工作只可在星期一至五上午十時至下午四時進行。只有在非常特殊的情況下，委員會才會考慮接納在其他時段、星期六、日或公眾假期的拍攝申請，如獲批准，申請人須支付當值的委員會職員的逾時工作津貼。無論在任何情況下，拍攝影片的時間不得多於連續兩天。","en":"Filming may take place only 10:00–16:00, Monday to Friday. Only in exceptional circumstances will the Committee consider other periods, weekends or public holidays; if approved, the applicant pays staff overtime allowances. Filming may not last more than 2 consecutive days.","source":"CTC-V 甲(8), 甲(9)"},"lunar":{"zh":"政府電影推廣及協助服務科的場地資料另載明：拍攝不可於某些節日及每月農曆初一、十五進行。（此項見於政府網頁；委員會二〇二三年十一月的守則並無載列，宜先向委員會確認。）","en":"The Government’s Film Promotion and Facilitation Section location entry additionally states that filming may not take place on certain festival days or on the 1st and 15th day of each lunar month. (This appears on the Government page; it is not stated in CTC’s November 2023 rules — confirm with the Committee.)","source":"FPF"},"onSite":{"zh":"不得把廟宇的名稱攝入影片中，亦不可以特寫鏡頭拍攝神像。不得作出褻瀆性、淫猥性、暴力或藐視等的行為。拍攝過程中禁止使用炸藥及煙火爆炸品。不得對善信及廟祝造成不必要的滋擾。申請人須委派一名聯絡人。","en":"The temple’s name may not be featured, and no close-up of any statue. Nothing blasphemous, obscene, violent or contemptuous. No explosives or pyrotechnics. No undue disturbance to worshippers or the temple keeper. The applicant must appoint a liaison person.","source":"CTC-V 乙(2)–(6)"},"damage":{"zh":"廟宇之物品如因拍攝而損壞，申請人必須如數賠償，委員會並會徵收根據涉及的費用之百分之二十五或港幣 300 元作行政費用（以較高者為準）。當值的委員會代表如有理由相信申請人未有遵守規定，有權隨時終止有關拍攝工作，委員會毋須賠償。","en":"Damage must be compensated in full, plus an administration charge of 25% of the sum involved or HK$300, whichever is higher. The Committee’s representative on site may terminate filming at any time, without compensation.","source":"CTC-V 乙(1), 乙(9), 乙(10)"},"after":{"zh":"拍攝工作完畢後，申請人須清理廟宇受影響的地方及移走一切什物；拍攝時間過後，任何工作人員或拍攝工具均不得留在廟宇內；必須在影片適當位置鳴謝委員會的協助。","en":"Clear the affected areas and remove all materials afterwards; no crew or equipment may remain after the permitted time; the Committee’s assistance must be acknowledged in the film.","source":"CTC-V 丙(1)–(3)"},"appeal":{"zh":"委員會具有接受申請與否的全部權力。如申請人不服其申請遭拒絕，可於申請結果通知日起計 10 天內連同補充資料向委員會提交書面陳述要求覆核，但委員會並不保證能在原有申請擬拍攝日期前作出覆核決定並通知申請人。","en":"The Committee has absolute discretion over acceptance. A refused applicant may request a review in writing within 10 days of notification, with supplementary information — but the Committee does not guarantee a decision before the intended shooting date.","source":"CTC-V 丁(1), 戊(1)"}},"processing":{"marNov":{"months":[3,4,5,6,7,8,9,10,11],"zh":"約 7 個工作天","en":"approximately 7 working days"},"decFeb":{"months":[12,1,2],"zh":"約 10 個工作天","en":"approximately 10 working days"},"quote_zh":"三月至十一月期間提出的申請需時約 7 個工作天處理。十二月至二月期間提出的申請需時約 10 個工作天處理。","source":"CTC-V 甲(2) · FPF"},"photo":{"zh":["除作私人收藏外，於委員會轄下廟宇拍攝照片必須申請，並只可用於教學、學術研究、知識推廣或新聞發放的用途。","於廟內使用閃光燈拍照，亦必須以書面（郵寄、電郵或傳真）向委員會提出申請。","申請一般需要七個工作天處理。申請書需提供：擬拍攝照片的日期及時間、參與人數、所屬公司／團體名稱、拍照目的／用途。","為免褻瀆神明，不可直接拍攝神像；為免影響善信，不可直接拍攝善信參神的情況。","委員會保留擁有有關照片版權的權利，申請人必須於發放照片時鳴謝委員會的協助。"],"en":["Except for private collection, photography in the Committee’s temples requires an application and may be used only for teaching, academic research, knowledge promotion or news release.","Using flash inside a temple also requires a written application (post, email or fax).","Applications normally take seven working days. The application states the date and time, number of participants, company or group name, and the purpose.","No direct photography of deity statues, and none of worshippers at their devotions.","The Committee reserves copyright in the photographs, and its assistance must be acknowledged on release."],"source":"CTC-P"},"contact":{"tel":"3718 6888","fax":"3718 6800","email":"enquiry@ctc.org.hk","address":"香港灣仔皇后大道東 183 號合和中心 24 樓","servicePage":"https://www.ctc.org.hk/take-photo/","videoPdf":"https://www.ctc.org.hk/wp-content/uploads/2023/11/華人廟宇委員會轄下廟宇拍攝影片守則-2023_11月.pdf","photoPdf":"https://www.ctc.org.hk/wp-content/uploads/2026/04/拍攝照片守則_2026.pdf","fpf":"https://fpf.ccidahk.gov.hk/en/location/detail.php?id=490"},"lunar":{"2026-02-17":"初一","2026-03-03":"十五","2026-03-19":"初一","2026-04-02":"十五","2026-04-17":"初一","2026-05-01":"十五","2026-05-17":"初一","2026-05-31":"十五","2026-06-15":"初一","2026-06-29":"十五","2026-07-14":"初一","2026-07-28":"十五","2026-08-13":"初一","2026-08-27":"十五","2026-09-11":"初一","2026-09-25":"十五","2026-10-10":"初一","2026-10-24":"十五","2026-11-09":"初一","2026-11-23":"十五","2026-12-09":"初一","2026-12-23":"十五","2027-01-08":"初一","2027-01-22":"十五","2027-02-06":"初一","2027-02-20":"十五","2027-03-08":"初一","2027-03-22":"十五","2027-04-07":"初一","2027-04-21":"十五","2027-05-06":"初一","2027-05-20":"十五","2027-06-05":"初一","2027-06-19":"十五","2027-07-04":"初一","2027-07-18":"十五","2027-08-02":"初一","2027-08-16":"十五","2027-09-01":"初一","2027-09-15":"十五","2027-09-30":"初一","2027-10-14":"十五","2027-10-29":"初一","2027-11-12":"十五","2027-11-28":"初一","2027-12-12":"十五","2027-12-28":"初一","2028-01-11":"十五","2028-01-26":"初一","2028-02-09":"十五","2028-02-25":"初一","2028-03-10":"十五","2028-03-26":"初一","2028-04-09":"十五","2028-04-25":"初一","2028-05-09":"十五","2028-05-24":"初一","2028-06-07":"十五","2028-07-22":"初一","2028-08-05":"十五","2028-08-20":"初一","2028-09-03":"十五","2028-09-19":"初一","2028-10-03":"十五","2028-10-18":"初一","2028-11-01":"十五","2028-11-16":"初一","2028-11-30":"十五","2028-12-16":"初一","2028-12-30":"十五","2029-01-15":"初一","2029-01-29":"十五"},"counts":{"total":24,"A":6,"B":2,"C":15,"U":1}}</script>
+<script>
+// Routing. One definition, tested in build.mjs and injected verbatim into the page,
+// so the tested logic and the shipped logic cannot drift apart.
+//
+// Exactly three public outcomes. None of them is a decision:
+//   'not-entertained' — a published rule says this type is not approved
+//   'no-restriction'  — nothing in this guide was triggered; CTC still decides
+//   'ask-ctc'         — the published material does not clearly cover this; ask CTC
+//
+// The words allowed / eligible / approved never appear.
+
+function route(templeCat, purpose, promoting) {
+  // The annex lists this temple in none of its three parts. State the fact, ask CTC.
+  if (templeCat === 'U') {
+    return { outcome: 'ask-ctc', reason: 'temple-not-listed' };
+  }
+
+  // 附錄丙 — listed as available for location filming, no purpose restriction published.
+  if (templeCat === 'C') {
+    return { outcome: 'no-restriction', reason: 'listed-for-filming' };
+  }
+
+  // 甲 (法定古蹟) and 乙 (一級歷史建築). [CTC-V] 甲(1)
+  // Lent only for documentaries and for films promoting temples, traditional
+  // culture, tourism or Hong Kong. Other applications of a COMMERCIAL nature
+  // will not be approved.
+  if (purpose === 'documentary') {
+    return { outcome: 'no-restriction', reason: 'documentary-at-restricted' };
+  }
+  if (purpose === 'promotional') {
+    return promoting === 'other'
+      ? { outcome: 'not-entertained', reason: 'promoting-product-at-restricted' }
+      : { outcome: 'no-restriction', reason: 'promoting-permitted-subject' };
+  }
+  if (purpose === 'commercial' || purpose === 'advertising') {
+    return { outcome: 'not-entertained', reason: 'commercial-at-restricted' };
+  }
+
+  // 檔案紀錄 and 教育 are on CTC's own form, but are neither named in the
+  // permitted list nor described as 商業性質. The published material does not
+  // settle it — so this guide does not settle it either.
+  return { outcome: 'ask-ctc', reason: 'purpose-not-covered-at-restricted' };
+}
+
+// Fees. Part hours count as whole hours. [CTC-V] 甲(3)
+function fees(hours, applicant) {
+  if (applicant === 'public' || applicant === 'charity') {
+    return { waived: true, admin: 0, service: 0, total: 0, billedHours: Math.ceil(hours) };
+  }
+  const h = Math.ceil(hours);
+  const admin = Math.max(5000, 1000 * h);
+  const service = Math.max(500, 100 * h);
+  return { waived: false, admin, service, total: admin + service, billedHours: h };
+}
+
+// Processing time as published — never converted into a latest-date-to-apply.
+function processing(month) {
+  return (month === 12 || month === 1 || month === 2)
+    ? { zh: '約 10 個工作天', en: 'approximately 10 working days' }
+    : { zh: '約 7 個工作天',  en: 'approximately 7 working days' };
+}
+
+
+(() => {
+  const D = JSON.parse(document.getElementById('data').textContent);
+  const $ = (id) => document.getElementById(id);
+  const esc = (s) => String(s).replace(/[&<>]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+  const money = (n) => '$' + n.toLocaleString('en-HK');
+  const CAT = { A:'法定古蹟', B:'一級歷史建築', C:'附錄丙 可供拍攝', U:'附錄未有列出' };
+  const CAT_EN = { A:'Declared monument', B:'Grade I historic building', C:'Listed for filming', U:'Not listed in the annex' };
+
+  // ---- populate controls -------------------------------------------------
+  $('temple').innerHTML = ['HK','KLN','NT'].map(r => {
+    const g = D.temples.filter(t => t.region === r);
+    const label = { HK:'香港島', KLN:'九龍', NT:'新界及離島' }[r];
+    return `<optgroup label="${label}">` +
+      g.map(t => `<option value="${esc(t.zh)}">${esc(t.zh)}</option>`).join('') + '</optgroup>';
+  }).join('');
+  $('purpose').innerHTML   = D.purposes.map(p => `<option value="${p.id}">${p.zh}　${p.en}</option>`).join('');
+  $('promoting').innerHTML = D.promoting.map(p => `<option value="${p.id}">${p.zh}　${p.en}</option>`).join('');
+  $('applicant').innerHTML = D.applicants.map(a => `<option value="${a.id}">${a.zh}</option>`).join('');
+
+  // Opens on a real, complete example rather than an empty shell.
+  $('temple').value = '沙田車公廟';
+  $('purpose').value = 'documentary';
+  $('applicant').value = 'other';
+  const d0 = new Date(); d0.setDate(d0.getDate() + 45);
+  $('date').value = d0.toISOString().slice(0, 10);
+
+  const card = (t, r) => `
+    <div class="r">
+      <div class="r-h"><span class="t">${t}</span><span class="src">${esc(r.source)}</span></div>
+      <div class="r-b"><div class="zh">${esc(r.zh)}</div><div class="en">${esc(r.en)}</div></div>
+    </div>`;
+
+  // ---- render ------------------------------------------------------------
+  function render() {
+    const temple = D.temples.find(t => t.zh === $('temple').value);
+    const purpose = $('purpose').value;
+    const isPromo = purpose === 'promotional';
+    $('q-promoting').classList.toggle('hidden', !isPromo);
+    const promoting = isPromo ? $('promoting').value : null;
+    const hours = Math.max(1, Number($('hours').value) || 1);
+    const applicant = $('applicant').value;
+    const dateStr = $('date').value;
+
+    $('temple-hint').innerHTML =
+      `<span class="pill ${temple.cat}">${CAT[temple.cat]}</span> &nbsp;${esc(temple.en)}`;
+
+    // Date facts — stated, never turned into a deadline.
+    let month = new Date().getMonth() + 1, dayName = '', lunarFlag = '';
+    if (dateStr) {
+      const dt = new Date(dateStr + 'T00:00:00');
+      month = dt.getMonth() + 1;
+      const wd = ['日','一','二','三','四','五','六'][dt.getDay()];
+      const weekend = dt.getDay() === 0 || dt.getDay() === 6;
+      dayName = `星期${wd}`;
+      const lu = D.lunar[dateStr];
+      lunarFlag = lu ? `　·　農曆${lu}` : '';
+      $('date-hint').innerHTML = `${dayName}${lunarFlag}` +
+        (weekend ? '　—　<b>星期六、日不在一般拍攝時段之內，見下方守則。</b>' : '') +
+        (lu ? '　—　<b>政府網頁另列明農曆初一、十五不可拍攝，見下方守則。</b>' : '');
+    } else { $('date-hint').textContent = ''; }
+
+    const { outcome, reason } = route(temple.cat, purpose, promoting);
+    const f = fees(hours, applicant);
+    const proc = processing(month);
+
+    const BAND = {
+      'not-entertained': { cls:'stop', tag:'已公布的守則顯示不獲接納',
+        zh:'委員會已公布的守則顯示，此類申請不獲接納。',
+        en:'The Committee’s published rules indicate that an application of this type is not entertained.' },
+      'no-restriction': { cls:'go', tag:'未觸發本導覽所列的限制',
+        zh:'你所輸入的資料未觸發本導覽所列的特定限制。所有申請仍須由華人廟宇委員會個別考慮及批核。',
+        en:'Your answers did not trigger any of the specific restrictions listed in this guide. Every application is still considered and determined by the Committee individually.' },
+      'ask-ctc': { cls:'ask', tag:'已公布的資料未有明確涵蓋',
+        zh: reason === 'temple-not-listed'
+          ? '委員會二〇二三年十一月守則的附錄，並未在三份名單中列出此廟宇。請直接聯絡委員會。'
+          : '已公布的守則未有明確說明此用途在此類廟宇是否適用。請直接聯絡委員會。',
+        en: reason === 'temple-not-listed'
+          ? 'The annex to the Committee’s November 2023 rules does not list this temple in any of its three parts. Please contact the Committee directly.'
+          : 'The published rules do not clearly state whether this purpose applies at this class of temple. Please contact the Committee directly.' },
+    }[outcome];
+
+    $('status').className = 'status ' + BAND.cls;
+    $('status').innerHTML = `
+      <div class="band">
+        <div class="tag">${BAND.tag}</div>
+        <div class="msg">${BAND.zh}</div>
+        <div class="msg-en">${BAND.en}</div>
+      </div>
+      <div class="foot">以上並非批核。請使用華人廟宇委員會正式表格提交申請。<br>
+        <span style="font-family:var(--f);font-weight:400;color:var(--ink-3);font-size:12.5px">This is not an approval. Please apply using the Committee’s own form.</span></div>`;
+
+    // Rules that apply to this combination.
+    let out = '';
+    if (temple.cat === 'A' || temple.cat === 'B') out += card('古蹟及一級歷史建築的限制', D.rules.restricted);
+
+    if (outcome !== 'not-entertained') {
+      out += `
+        <div class="r">
+          <div class="r-h"><span class="t">費用</span><span class="src">${esc(D.fees.source)}</span></div>
+          <div class="r-b">
+            <div class="zh">${esc(D.fees.quote)}</div>
+            <div class="fig">
+              <div class="fg${f.waived?' zero':''}"><b>${money(f.admin)}</b><span>行政費 Administration</span></div>
+              <div class="fg${f.waived?' zero':''}"><b>${money(f.service)}</b><span>服務費（司祝）Service</span></div>
+              <div class="fg${f.waived?' zero':''}"><b>${money(f.total)}</b><span>合計 Total</span></div>
+              <div class="fg"><b>${f.billedHours}</b><span>計費小時 Billed hours</span></div>
+            </div>
+            <div class="en">${f.waived
+              ? '按已公布的守則，公營機構及第 88 條慈善機構獲豁免上述費用。Waived for public bodies and s.88 charities, as published.'
+              : `行政費每小時 $1,000（最低 $5,000）＋ 服務費每小時 $100（最低 $500）。以委員會公布者為準，實際收費由委員會確認。Figures as published; the Committee confirms the actual charge.`}</div>
+          </div>
+        </div>`;
+      out += card('公眾責任保險', D.rules.insurance);
+      out += card('拍攝時段', D.rules.hours);
+      if (dateStr && D.lunar[dateStr]) out += card('農曆初一、十五', D.rules.lunar);
+      out += `
+        <div class="r">
+          <div class="r-h"><span class="t">處理時間</span><span class="src">${esc(D.processing.source)}</span></div>
+          <div class="r-b">
+            <div class="zh">${esc(D.processing.quote_zh)}</div>
+            <div class="zh">按你所選日期的月份，委員會公布的處理時間為 <b>${proc.zh}</b>。</div>
+            <div class="en">Stated as published — <b>${proc.en}</b>. This guide does not calculate a latest date to apply; the published figure is approximate and the Committee determines timing.</div>
+          </div>
+        </div>`;
+      out += `
+        <div class="r">
+          <div class="r-h"><span class="t">遞交前準備</span><span class="src">CTC-V 甲(2)(5) · 申請表</span></div>
+          <div class="r-b">
+            <ul class="chk">
+              <li>委員會的拍攝申請表（機構名稱、負責人、職位、地址、電話、傳真）</li>
+              <li>擬拍攝日期、時間及所需時數；擬拍攝地點</li>
+              <li>拍攝用途，以及取景片段及活動簡介</li>
+              <li><b>劇本</b>——須連同申請書一併遞交，經審核接納後不得擅自更改</li>
+              <li><b>公眾責任保險保單副本</b>——不少於 $10,000,000，三方共同名義</li>
+              <li>現場聯絡人姓名及電話</li>
+            </ul>
+          </div>
+        </div>`;
+    } else {
+      out += `
+        <div class="r">
+          <div class="r-h"><span class="t">可考慮的下一步</span><span class="src">CTC-V 甲(1) · 戊(1)</span></div>
+          <div class="r-b">
+            <div class="zh">按已公布的守則，此類廟宇只外借作紀錄片，或推廣廟宇、傳統文化、旅遊、宣傳香港的影片之用。附錄丙另列出 ${D.counts.C} 間可供拍攝外景的廟宇，或可考慮。如仍希望申請，委員會設有覆核機制（見下方）。</div>
+            <div class="en">As published, this class of temple is lent only for documentaries and for films promoting temples, traditional culture, tourism or Hong Kong. The annex separately lists ${D.counts.C} temples available for location filming. A review mechanism exists if an application is refused.</div>
+          </div>
+        </div>`;
+    }
+    $('result').innerHTML = out;
+  }
+
+  // Always-applicable rules
+  $('always').innerHTML =
+      card('劇本', D.rules.script)
+    + card('拍攝期間', D.rules.onSite)
+    + card('損壞及終止', D.rules.damage)
+    + card('拍攝完成後', D.rules.after)
+    + card('委員會的酌情權及覆核', D.rules.appeal);
+
+  // Photo track
+  $('photo-src').textContent = D.photo.source;
+  $('photo-body').innerHTML = D.photo.zh.map((z, i) =>
+    `<div class="zh">${esc(z)}</div><div class="en">${esc(D.photo.en[i])}</div>`).join('');
+
+  // Temple table
+  $('cat-note').innerHTML =
+    `委員會轄下共 ${D.counts.total} 間直轄廟宇。二〇二三年十一月守則的附錄分三部分：法定古蹟 ${D.counts.A} 間、一級歷史建築 ${D.counts.B} 間、可供拍攝外景 ${D.counts.C} 間，合共 ${D.counts.A + D.counts.B + D.counts.C} 間。餘下 ${D.counts.U} 間（筲箕灣玉皇寶殿）在三份名單中均未見列出——此頁只如實指出這一點，並建議直接向委員會查詢。`;
+  $('temple-table').innerHTML = D.temples.map(t =>
+    `<tr><td style="font-family:var(--f-cjk);font-weight:500;white-space:nowrap">${esc(t.zh)}</td>
+         <td class="d">${esc(t.en)}</td>
+         <td><span class="pill ${t.cat}">${CAT[t.cat]}</span>
+             <div class="d" style="margin-top:3px">${CAT_EN[t.cat]}</div></td></tr>`).join('');
+
+  // Sources
+  const c = D.contact;
+  $('sources').innerHTML = `
+    <div><dt>CTC-V — 影片拍攝守則（二〇二三年十一月修訂）</dt>
+      <dd><a href="${c.videoPdf}" target="_blank" rel="noopener">華人廟宇委員會轄下廟宇拍攝影片時所須遵守的一般守則</a></dd></div>
+    <div><dt>CTC-P — 照片拍攝守則（2026 年 4 月）</dt>
+      <dd><a href="${c.photoPdf}" target="_blank" rel="noopener">華人廟宇委員會轄下廟宇拍攝照片守則</a></dd></div>
+    <div><dt>委員會服務頁 · 正式表格由此下載</dt>
+      <dd><a href="${c.servicePage}" target="_blank" rel="noopener">${c.servicePage}</a></dd></div>
+    <div><dt>FPF — 政府電影推廣及協助服務科場地資料</dt>
+      <dd><a href="${c.fpf}" target="_blank" rel="noopener">Film Promotion and Facilitation Section, Location Library</a></dd></div>
+    <div><dt>聯絡委員會</dt>
+      <dd>電話 ${c.tel}　·　傳真 ${c.fax}　·　電郵 <a href="mailto:${c.email}">${c.email}</a><br>${c.address}</dd></div>`;
+
+  $('foot').innerHTML =
+    `資料讀取於 ${D.generated}，整理自上列委員會及政府公布的文件。此頁不收集姓名、聯絡方法或任何可識別身分的資料，不儲存任何輸入，亦沒有刻意設置分析工具。<br>
+     Compiled ${D.generated} from the published documents listed above. This page requests no names, contact details or identifying information, stores no responses, and uses no intentional analytics.<br>
+     與華人廟宇委員會並無隸屬關係，未經其審核或授權。Not affiliated with, reviewed by, or endorsed by the Chinese Temples Committee.`;
+
+  ['temple','purpose','promoting','hours','applicant','date']
+    .forEach(id => $(id).addEventListener('input', render));
+  render();
+})();
+</script>
+</body>
+</html>
